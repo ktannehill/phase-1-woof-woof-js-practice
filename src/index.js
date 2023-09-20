@@ -9,7 +9,9 @@
 
 
 // Global variables
-
+const dogBarDiv = document.querySelector("#dog-bar")
+const dogInfoDiv = document.querySelector("#dog-info")
+const filterGoodDogBtn = document.querySelector("#good-dog-filter")
 
 
 // Helper functions
