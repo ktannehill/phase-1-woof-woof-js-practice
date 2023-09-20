@@ -16,7 +16,11 @@ const filterGoodDogBtn = document.querySelector("#good-dog-filter")
 
 
 // Helper functions
-
+const createDogBtn = (dogObj) => {
+    const dogBtn = document.createElement("button")
+    dogBtn.textContent = dogObj.name
+    dogBarDiv.append(dogBtn)
+}
 
 
 // Fetch requests
