@@ -17,7 +17,7 @@ const filterGoodDogBtn = document.querySelector("#good-dog-filter")
 
 // Helper functions
 const createDogBtn = (dogObj) => {
-    const dogBtn = document.createElement("button")
+    const dogBtn = document.createElement("span")
     dogBtn.textContent = dogObj.name
     dogBarDiv.append(dogBtn)
 }
