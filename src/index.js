@@ -28,6 +28,8 @@ const displayDogDetails = (dogObj) => {
     const dogBtn = document.createElement("button")
     dogBtn.textContent = dogObj.isGoodDog ? "GoodDog!" : "Bad Dog!"
 
+    dogBtn.addEventListener("click", e => updateDogStatus(dogObj))
+
     dogInfoDiv.append(image, h2, dogBtn)
 }
 
@@ -55,6 +57,10 @@ const getAllDogs = () => {
     .catch(err => alert(err))
 }
 getAllDogs()
+
+function updateDogStatus(dogObj) {
+    
+}
 
 
 
