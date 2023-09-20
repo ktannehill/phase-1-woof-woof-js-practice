@@ -9,6 +9,7 @@
 
 
 // Global variables
+const DOGSURL = "http://localhost:3000/pups"
 const dogBarDiv = document.querySelector("#dog-bar")
 const dogInfoDiv = document.querySelector("#dog-info")
 const filterGoodDogBtn = document.querySelector("#good-dog-filter")
@@ -19,6 +20,19 @@ const filterGoodDogBtn = document.querySelector("#good-dog-filter")
 
 
 // Fetch requests
+const getAllDogs = () => {
+    fetch(DOGSURL)
+    .then(resp => {
+        if(resp.ok) {
+            return resp.json()
+        } else {
+            throw(err)
+        }
+    })
+    .then(dogsData => dogsData.forEach(createDogBtn))
+    .catch(err => alert(err))
+}
+getAllDogs()
 
 
 
