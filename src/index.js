@@ -16,10 +16,28 @@ const filterGoodDogBtn = document.querySelector("#good-dog-filter")
 
 
 // Helper functions
+const displayDogDetails = (dogObj) => {
+    dogInfoDiv.innerHTML = ""
+    console.log(dogObj)
+    debugger
+    const image = document.createElement("img")
+    image.src = dogObj.image
+    image.alt = dogObj.name
+    const h2 = document.createElement("h2")
+    h2.textContent = dogObj.name
+    const dogBtn = document.createElement("button")
+    dogBtn.textContent = dogObj.isGoodDog ? "GoodDog!" : "Bad Dog!"
+
+    dogInfoDiv.append(image, h2, dogBtn)
+}
+
 const createDogBtn = (dogObj) => {
-    const dogBtn = document.createElement("span")
-    dogBtn.textContent = dogObj.name
-    dogBarDiv.append(dogBtn)
+    const dogSpan = document.createElement("span")
+    dogSpan.textContent = dogObj.name
+
+    dogSpan.addEventListener("click", e => displayDogDetails(dogObj))
+
+    dogBarDiv.append(dogSpan)
 }
 
 
